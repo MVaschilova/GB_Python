@@ -5,8 +5,8 @@
 # Далее запросите численность сотрудников фирмы и определите прибыль фирмы в расчете на одного сотрудника.
 
 revenue = float(input('Введите сумму выручки >>> '))
-if revenue <= 0:
-    print('Выручка должна быть положительной')
+if revenue < 0:
+    print('Выручка должна быть неотрицательной')
     exit()
 costs = float(input('Введите сумму издержек >>> '))
 if costs <= 0:
@@ -14,10 +14,11 @@ if costs <= 0:
     exit()
 elif revenue > costs:
     print('Фирма в прибыли')
-    profitability = revenue / costs * 100
+    profit = revenue - costs
+    profitability = profit / costs * 100
     number_person = int(input('Введите количество сотрудников >>> '))
     if number_person > 0:
-        profit_per_person = (revenue - costs) / number_person
+        profit_per_person = profit / number_person
         print(
             f'Рентабельность составляет {profitability:.2f}%, прибыль на одного сотрудника составляет {profit_per_person:.2f}')
     else:
