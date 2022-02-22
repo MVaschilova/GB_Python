@@ -8,7 +8,7 @@ finish_km = float(input('Укажите целевое значение длин
 if finish_km < start_km or finish_km < 0 or start_km < 0:
     print('Вы указали некорректные входные данные')
 else:
-    days_num = 0
+    days_num = 1
 while start_km < finish_km:
     days_num += 1
     start_km += 0.1 * start_km
